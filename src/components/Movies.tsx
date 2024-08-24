@@ -1,6 +1,6 @@
 import { addDoc, collection, deleteDoc, doc, getDocs, updateDoc } from 'firebase/firestore'
 import { ref, uploadBytes } from 'firebase/storage'
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { auth, db, storage } from '../config/firebase'
 
 const moviesCollectionRef = collection(db, 'movies')
@@ -20,7 +20,7 @@ const Movies = () => {
   })
   const [movies, setMovies] = useState<Array<IMovie>>([])
 
-  const [file, setFile] = useState(null)
+  const [file, setFile] = useState<File|null>(null)
 
   const [updatedTitle, setUpdatedTitle] = useState('')
 
